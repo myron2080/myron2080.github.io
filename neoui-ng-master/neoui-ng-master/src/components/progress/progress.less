@@ -1,0 +1,97 @@
+
+.md-progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	pointer-events: none;
+}
+
+.md-progress-global {
+    position: fixed;
+    z-index: 10;
+}
+
+.md-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(
+    to right,
+    #62efab 5%,
+    #F2EA7D 15%,
+    #F2EA7D 25%,
+    #FF8797 35%,
+    #FF8797 45%,
+    #e1a4f4 55%,
+    #e1a4f4 65%,
+    #82fff4 75%,
+    #82fff4 85%,
+    #62efab 95%);
+    background-size: 200%;
+    background-position: 0%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, animation 0.3s ease;
+    animation: progress-bar 15s linear infinite;
+    > div {
+        position: absolute;
+        right: 0px;
+        display: block;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+        opacity: 1.0;
+        transform: rotate(3deg) translate(0px, -4px);
+    }
+}
+
+.md-progress-spinner {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    > div {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: solid 2px transparent;
+        border-top-color: #29d;
+        border-left-color: #29d;
+        border-radius: 50%;
+        animation: progress-spinner 400ms linear infinite;
+    }
+}
+
+/** IOS theme */
+.md-progress-ios {
+    .md-progress-bar {
+        height: 0.25rem;
+        background: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+        background-size: 24em 0.25em;
+        > div {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 4em;
+            box-shadow: none;
+            background-image: linear-gradient(to bottom, lighten( #efefef, 3% ), transparent);
+            transform: skew(45deg);
+            transform-origin: 0 0;
+        }
+    }
+    .md-progress-spinner { display: none; }
+}
+
+@keyframes progress-spinner {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+@keyframes progress-bar {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}

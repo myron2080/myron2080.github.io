@@ -1,0 +1,65 @@
+
+@import (reference) "../../style/app.less";
+@import (reference) "../common/css/markdown.less";
+
+#tooltip {
+    #markdown();
+
+    .wrap {
+        padding-left: 30px;
+        margin-bottom: 60px;
+    }
+
+    .wrap p {
+        height: 48px;
+        line-height: 48px;
+        font-family: Georgia, "Times New Roman", Sans-serif;
+
+        &:last-child { margin-top: 100px; }
+    }
+
+    .avatar {
+        margin-top: 60px;
+    }
+
+    .avatar img {
+        vertical-align: bottom;
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+    }
+
+    .social {
+        a {
+            display: inline-block;
+            height: 48px;
+            width: 48px;
+            margin-right: 10px;
+            color: rgba(0,0,0,.7);
+            text-align: center;
+            line-height: 46px;
+            border: 1px solid;
+            border-radius: 48px;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover { text-decoration: none; }
+            &.dribbble,
+            &.dribbble:hover { color: @dribbble; }
+            &.twitter,
+            &.twitter:hover { color: @twitter; }
+            &.github,
+            &.github:hover { color: @darkGray; }
+        }
+
+        .md-tooltip.md-tooltip-top {
+            &:hover:before { margin-bottom: 0px; }
+            &:hover:after { margin-bottom: 12px; }
+        }
+    }
+
+    img {
+        transition: .2s;
+        &:hover { box-shadow: 0 1px 24px rgba(0,0,0,.24); }
+    }
+}

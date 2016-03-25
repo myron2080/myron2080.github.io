@@ -1,0 +1,30 @@
+
+@import (reference) "../../style/app.less";
+@import (reference) "../common/css/markdown.less";
+
+#tree {
+    #markdown();
+
+    .example.wrap {
+        position: relative;
+        margin: 10px 120px 0 10px;
+
+        .md-tree {
+            margin: 0 120px 0 0;
+            display: inline-block;
+
+            & + div {
+                display: inline-block;
+                vertical-align: top;
+
+                button, input {
+                    width: 180px;
+                    margin: 10px;
+                }
+            }
+        }
+
+        code { display: inline-block; }
+    }
+
+}

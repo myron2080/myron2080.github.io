@@ -1,0 +1,28 @@
+
+@import (reference) "../../style/app.less";
+@import (reference) "../common/css/markdown.less";
+
+#validation {
+    #markdown();
+
+    .ui.form {
+
+        .row {
+            margin: 10px 0 20px;
+
+            > label:first-child {
+                width: 15%;
+                display: inline-block;
+            }
+
+            > input {
+                width: 80%;
+                display: inline-block;
+            }
+
+            input {
+                margin-left: 0;
+            }
+        }
+    }
+}

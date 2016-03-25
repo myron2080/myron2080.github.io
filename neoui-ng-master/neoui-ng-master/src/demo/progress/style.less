@@ -1,0 +1,67 @@
+
+@import (reference) "../../style/app.less";
+@import (reference) "../common/css/markdown.less";
+@import (reference) "../loading/style.less";
+
+#progress {
+    #loading();
+
+    .md-btn {
+        width: 100px;
+        margin: 10px;
+    }
+
+    .block.green {
+        background-color: #a0d468;
+        padding: 50px 0 75pt;
+
+        > h1 {
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        > p {
+            font-weight: 800;
+            word-spacing: 6px;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .block.gray {
+        background-color: #414141;
+        position: relative;
+        width: 100%;
+        padding: 75pt 0 30px
+    }
+
+    .action { margin: 0; }
+
+    .method > .param {
+        position: relative;
+        padding: 24px 40px;
+        > p {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        > p:first-child {
+            width: 30%;
+        }
+
+        &:after {
+            content: "";
+            transition: .2s;
+            width: 66%;
+            height: .1rem;
+            bottom: 10px;
+            left: 32%;
+            position: absolute;
+            background-color: @lightGray;
+        }
+
+        &:hover:after {
+            background-color: @darkGray;
+        }
+    }
+}

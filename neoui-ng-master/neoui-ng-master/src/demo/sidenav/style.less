@@ -1,0 +1,48 @@
+
+@import (reference) "../../style/app.less";
+@import (reference) "../common/css/markdown.less";
+
+#sidenav {
+    #markdown();
+    .md-btn { margin-right: 10px; }
+}
+
+#profile {
+    background: url(../images/bg-preorder.jpg) no-repeat center center fixed;
+    background-size: cover;
+    text-indent: 30px;
+    min-width: 300px;
+    overflow: hidden;
+
+    ul { padding: 40% 0; }
+    a { text-indent: 0; }
+
+    li {
+        height: 48px;
+        font-size: 12px;
+        text-indent: 48px;
+        line-height: 48px;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            color: @mint;
+            background-color: rgba(0, 0, 0, 0.335);
+        }
+        &.active { color: @coral; }
+        &.exit { margin-top: 50%; }
+
+        &.avatar {
+            margin-bottom: 64px;
+            &:hover { background-color: initial; }
+            img {
+                width: 32px;
+                height: 32px;
+                border-radius: 32px;
+                vertical-align: middle;
+            }
+        }
+    }
+}

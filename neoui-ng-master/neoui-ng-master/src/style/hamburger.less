@@ -1,0 +1,33 @@
+
+.md-hamburger {
+    position: relative;
+    width: 20px;
+    height: 14px;
+    margin: 10px 20px 0 0;
+    cursor: pointer;
+
+    .md-line {
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        transition: .3s;
+        &.md-line-1 { top: 0; }
+        &.md-line-2 { top: 50%; }
+        &.md-line-3 { top: 100%; }
+    }
+
+    &:hover,
+    &:focus {
+        .md-line-1 { transform: translateY(-2px); }
+        .md-line-3 { transform: translateY(2px); }
+    }
+
+    &.active {
+        .md-line-1 { transform: translateY(7px) translateX(0) rotate(45deg); }
+        .md-line-2 { opacity: 0; }
+        .md-line-3 { transform: translateY(-7px) translateX(0) rotate(-45deg); }
+    }
+}

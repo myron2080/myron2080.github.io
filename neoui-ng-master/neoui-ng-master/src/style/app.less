@@ -1,0 +1,173 @@
+
+@import (less) "base/fonts.less";
+@import (reference) "neoui.less";
+
+/**
+@import (less) "base/mixins.less";
+@import (less) "base/size.less";
+*/
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+xmp { padding: 20px; }
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 69px;
+    box-sizing: border-box;
+    background-color: @google;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    z-index: 9;
+
+    a.md-hamburger, a:last-child {
+        position: absolute !important;
+        overflow: initial !important;
+    }
+
+    a.md-hamburger {
+        top: 17px;
+        left: 32px;
+        display: inline-block;
+    }
+
+    a:last-child {
+        top: 19px;
+        right: 32px;
+        display: inline-block;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .md-tooltip {
+
+        &:before,
+        &:before:hover { margin-bottom: -7px; }
+
+        &:after,
+        &:after:hover { margin-bottom: -18px; }
+
+        &.left {
+            &:before { margin-right: 5px; }
+            &:hover:before { margin-right: -3px; }
+            &:after { margin-right: 17px; }
+            &:hover:after { margin-right: 9px; }
+        }
+    }
+
+    .md-progress { margin-top: 69px; }
+}
+
+#menu {
+
+    text-indent: 30px;
+    min-width: 300px;
+
+    .menu-logo {
+        cursor: pointer;
+        width: 100%;
+        background-color: @google;
+        color: #fff;
+        height: 69px;
+        line-height: 69px;
+    }
+
+    .menu-item {
+
+        height: 48px;
+        margin-top: 10px;
+        font-family: "Roboto", Sans-serif;
+        font-weight: 300;
+        line-height: 48px;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover { background-color: rgba(0, 0, 0, 0.035); }
+
+        &.active { color: @coral; }
+    }
+
+    .md-ripple-ink {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    p {
+        font-size: 38px;
+        font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', Roboto, Arial, Sans-serif;
+        text-shadow: 0 0 40px #fff;
+    }
+
+    p:hover { animation: pulse 1.6s infinite linear; }
+
+    ul { padding: 0; }
+
+    li {
+        height: 32px;
+        font-size: 12px;
+        text-indent: 48px;
+        line-height: 32px;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover { background-color: rgba(0, 0, 0, 0.035); }
+        &.active { color: @coral; }
+    }
+}
+
+#footer {
+
+    height: 260px;
+    padding-top: 75px;
+    background-color: #212121;
+    font-family: HelveticaNeue-UltraLight,'Helvetica Neue UltraLight',Roboto,Arial,Sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+
+    a:not(.md-icon-github4) {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        transition: .2s;
+
+        &:after {
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: @darkGray;
+            content: "";
+            transition: .2s;
+        }
+
+        &:hover {
+            color: @coral;
+            &:after { background-color: @coral; }
+        }
+    }
+
+    a.md-icon-github4 {
+
+        font-size: 20px;
+
+        &,
+        &:hover,
+        &:active {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+

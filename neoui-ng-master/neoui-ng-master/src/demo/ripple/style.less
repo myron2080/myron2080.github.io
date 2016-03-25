@@ -1,0 +1,269 @@
+
+@import (reference) "../../style/app.less";
+@import (reference) "../common/css/mixins.less";
+
+#ripple {
+    padding-top: 100px;
+    font-family: HelveticaNeue-UltraLight,'Helvetica Neue UltraLight',Roboto,Arial,Sans-serif;
+    .themes {
+        #themes();
+    }
+    .md-btn {
+        width: 100px;
+        font-weight: 800;
+    }
+
+    h1 {
+        font-weight: 200;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    h3 {
+        font-size: 20px;
+        color: white;
+        text-shadow: 0 0 40px #fff;
+        font-weight: 600;
+        word-spacing: 2px;
+    }
+
+    a {
+        text-decoration: none;
+        background-color: #ebebeb;
+        color: #3883a3;
+        padding: 0 2px;
+        border-radius: 2px;
+        transition: background-color 0.2s, color 0.4s;
+        &:hover {
+            background-color: #98cede;
+            color: #212121;
+        }
+    }
+
+    xmp {
+        display: block;
+        margin: 30px 0 0 0;
+        font-family: Georgia,"Times New Roman","Microsoft YaHei","微软雅黑",STXihei,"华文细黑",serif;
+        font-size: 14px;
+        color: rgba(0,0,0,.55);
+        background-color: #fff;
+        box-shadow: 0 1px 24px rgba(0,0,0,.24);
+    }
+
+    .action { margin: 120px 0 60px; }
+
+    .block {
+        padding: 50px 0 100px;
+        text-align: center;
+        overflow: hidden;
+
+        &.example {
+            padding: 50px 0 100px;
+
+            h1 {
+                position: relative;
+                display: inline-block;
+                color: @coral;
+                cursor: pointer;
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    bottom: -8px;;
+                    width: 100%;
+                    height: 4px;
+                    content: "";
+                    background-color: @lightGray;
+                    transition: .2s;
+                }
+                &:hover:after { background-color: @coral; }
+            }
+
+            p {
+                font-weight: 800;
+                word-spacing: 6px;
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+        }
+
+        &.various {
+            position: relative;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+
+            .box {
+                width: 180px;
+                height: 180px;
+                vertical-align: top;
+                margin: 40px;
+                background-color: white;
+                display: inline-block;
+                box-shadow: 0 1px 24px rgba(0,0,0,.24);
+                position: relative;
+            }
+
+            button {
+                width: auto;
+                margin: 110px 20px;
+            }
+
+            a {
+                width: 38px;
+                height: 38px;
+                border: 38px;
+                background-color: @twitter;
+                display: block;
+                border-radius: 38px;
+                line-height: 38px;
+                color: white;
+                cursor: pointer;
+                transition: .2s;
+                left: 50%;
+                top: 50%;
+                margin-top: -19px;
+                margin-left: -19px;
+                position: absolute;
+                &:hover {
+                    box-shadow: 0 1px 24px rgba(0,0,0,.24);
+                }
+            }
+        }
+
+        &.aqua {
+            background-color: @aqua;
+            padding: 50px 0 100px;
+        }
+
+        &.yellow {
+            background-color: #ddca9a;
+            padding-top: 50px;
+        }
+
+        .content {
+            width: 900px;
+            margin: auto;
+            text-align: left;
+        }
+    }
+
+    .code {
+        position: relative;
+
+        > label {
+            position: absolute;
+            right: 0;
+            display: block;
+            width: 80px;
+            padding: 4px 14px;
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            font-weight: 800;
+            background: @coral;
+            transition: .2s;
+            &:hover {
+                box-shadow: 0 1px 24px rgba(0,0,0,.24);
+            }
+        }
+    }
+
+    .prop {
+        position: relative;
+        margin: 20px 0 55px;
+        padding: 30px 40px;
+        border-left: 8px solid @lavender;
+        font-family: Roboto,Sans-serif;
+        font-size: 14px;
+        font-weight: 100;
+        color: rgba(0,0,0,.55);
+        background-color: white;
+        transition: .2s;
+
+        &:hover { border-left: 40px solid @dribbble; }
+
+        > .name,
+        > .desc {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        > .name {
+            width: 30%;
+
+            &:after {
+                position: absolute;
+                left: 25%;
+                top: 30px;
+                width: 4px;
+                height: 50%;
+                background-color: #f5f7fa;
+                content: "";
+            }
+        }
+
+        p {
+            height: 32px;
+            line-height: 32px;
+        }
+    }
+
+    .method {
+        position: relative;
+        margin: 20px 0 55px;
+        padding: 36px 0 0 0px;
+        font-family: Roboto,Sans-serif;
+        font-size: 14px;
+        font-weight: 100;
+        color: rgba(0,0,0,.55);
+        background-color: white;
+        box-shadow: 0 1px 24px rgba(0,0,0,.24);
+        transition: .2s;
+
+        > .name {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: 32px;
+            padding: 0 16px;
+            line-height: 32px;
+            text-indent: 40px;
+            color: white;
+            background-color: @dribbble;
+            text-indent: 0;
+        }
+
+        > .desc {
+            width: 100%;
+            height: 32px;
+            line-height: 32px;
+            text-indent: 40px;
+        }
+
+        > .param {
+            position: relative;
+            padding: 24px 40px;
+            > p {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            > p:first-child { width: 30%; }
+
+            &:after {
+                position: absolute;
+                bottom: 10px;
+                left: 32%;
+                width: 66%;
+                height: 2px;
+                background-color: @lightGray;
+                content: "";
+                transition: .2s;
+            }
+
+            &:hover:after { background-color: @darkGray; }
+        }
+    }
+}

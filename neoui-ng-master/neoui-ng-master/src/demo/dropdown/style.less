@@ -1,0 +1,52 @@
+
+@import (reference) "../../style/app.less";
+@import (reference) "../common/css/markdown.less";
+
+#dropdown {
+    #markdown();
+    .simple .wrap {
+        display: inline-block;
+        margin: 20px;
+    }
+
+    .advance .md-dropdown {
+        width: 100%;
+        .md-dropdown-content { padding: 0; }
+
+        ul li {
+            height: auto;
+            padding: 10px 0;
+            font-size: 12px;
+            line-height: 28px;
+            &.md-dropdown-selected {
+                background: @coral;
+                color: white;
+            }
+            &:hover { background: @lightGray2; }
+        }
+    }
+
+    .md-radio,
+    .md-checkbox {
+        margin-left: 8px;
+    }
+
+    .options {
+        padding: 0;
+        list-style: none;
+
+        li {
+            width: 100%;
+            border-left: 4px solid @lightGray2;
+            height: 48px;
+            line-height: 48px;
+            padding-left: 24px;
+        }
+
+        label:first-child {
+            width: 90%;
+            display: inline-block;
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+
+@import (reference) "../../style/neoui.less";
+
+.md-accordion .md-accordion {
+    padding-left: 10px;
+}
+
+.md-accordion-pane {
+    position: relative;
+    overflow: hidden;
+    transition: .2s;
+
+    &:after {
+        position: absolute;
+        top: 16px;
+        right: 0;
+        font-family: icomoon;
+        font-size: 16px;
+        color: #6496f0;
+        content: "\e603";
+        transition: .5s;
+    }
+}
+
+.md-accordion-head {
+    width: 100%;
+    padding: 15px 5px 5px;
+    font-size: 16px;
+    border-bottom: 2px solid @lightGray;
+    cursor: pointer;
+    transition: .2s color, .5s border-color;
+    &:hover { color: @primary; }
+}
+
+.md-accordion-content {
+    height: 0;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s opacity;
+}
+
+.md-accordion-open {
+    .md-accordion-head {
+        color: @primary;
+        border-color: @primary;
+    }
+    .md-accordion-content {
+        height: auto;
+        padding: 16px 5px 10px;
+        opacity: 1;
+        visibility: visible;
+
+    }
+    &:after { transform: rotate(405deg); }
+}

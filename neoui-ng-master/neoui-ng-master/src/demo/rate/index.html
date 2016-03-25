@@ -1,0 +1,269 @@
+
+
+<title>Rate - Neoui-ng</title>
+
+<ul id="anchors" class="md-anchor">
+    <li data-anchor="example" class="md-anchor-item active" data-forceAnchor="-260">Example</li>
+    <li class="md-anchor-item">AngularJS
+        <ul>
+            <li data-anchor="markup" class="md-anchor-item">Markup</li>
+            <li data-anchor="javascript" class="md-anchor-item">Javascript</li>
+            <li data-anchor="sRate" class="md-anchor-item">Directive * s-rate</li>
+        </ul>
+    </li>
+    <li class="md-anchor-item">jQuery
+        <ul>
+            <li data-anchor="html" class="md-anchor-item">Html</li>
+            <li data-anchor="constructor" class="md-anchor-item">Constructor</li>
+            <li data-anchor="options" class="md-anchor-item">Options</li>
+            <li data-anchor="method" class="md-anchor-item">Method</li>
+        </ul>
+    </li>
+</ul>
+
+<section id="rate" ng-controller="rateController" ng-init="init()">
+
+    <header data-anchor="example">Example</header>
+
+    <section>
+
+        <div class="wrap">
+
+            <div class="box">
+
+                <span>
+                    <s-rate ng-model="star" ng-init="star = 4.6"></s-rate>
+                </span>
+
+                <br>
+
+                <span>
+                    <s-rate class="md-rate-heart" ng-model="heart"></s-rate>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="movie">
+            <div class="cover">
+                <div class="skew">
+                    <img src="//image.tianjimedia.com/uploadImages/2014/307/16/B64L7138TZN2.jpg">
+
+                    <div class="meta">
+                        <p class="subhead">
+                            Interstellar (2014)
+                        </p>
+                        <p>
+                            <span>PG-13</span>
+                            <span>169 min</span>
+                            <span>8.7</span>
+                        </p>
+                        <s-rate ng-model="rate" ng-init="rate = 4.4"></s-rate>
+                        <span>
+                            <i class="md-icon-favorite"></i>
+                            740,216 likes
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="preview">
+                    <div class="min">
+                        <img src="//www.moviesnet.nl/images/filmnieuws/2014/1410889036/interstellar.jpg">
+                        <i class="md-icon-play-arrow"></i>
+                    </div>
+                </div>
+
+                <div class="desc">
+                    <p>A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
+                    <p class="director"><b>Director:</b> <a href="//www.imdb.com/name/nm0634240/?ref_=tt_ov_dr">Christopher Nolan</a></p>
+                    <p class="writers"><b>Writers:</b> <a href="//www.imdb.com/name/nm0634300/?ref_=tt_ov_wr">Jonathan Nolan</a>, <a href="//www.imdb.com/name/nm0634240/?ref_=tt_ov_wr">Christopher Nolan</a></p>
+                    <p class="stars"><b>Stars:</b> <a href="//www.imdb.com/name/nm0000190/?ref_=tt_ov_st">Matthew McConaughey</a>, <a href="//www.imdb.com/name/nm0004266/?ref_=tt_ov_st">Anne Hathaway</a>, <a href="//www.imdb.com/name/nm1567113/?ref_=tt_ov_st">Jessica Chastain</a> | <a href="//www.imdb.com/title/tt0816692/fullcredits?ref_=tt_ov_st_sm">See full cast and crew</a>
+
+                    <div class="action">
+                        <button class="md-btn md-btn-mint">
+                            <i class="md-icon-add"></i>
+                            Watchlist
+                        </button>
+
+                        <button class="md-btn md-btn-coral">
+                            Watch Trailer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <header>AngularJS</header>
+
+    <div class="markdown">
+        <section>
+            <div class="md-ribbon" data-anchor="markup">
+                <span>Markup</span>
+            </div>
+
+            <div class="wrap">
+                <label><i class="icon star"></i></label>
+                <xmp>
+    <s-rate ng-model="star" ng-init="star = 4.6"></s-rate>
+                </xmp>
+            </div>
+
+            <div class="wrap">
+                <label><i class="icon favorite"></i></label>
+                <xmp>
+    <s-rate class="md-rate-heart" ng-model="heart"></s-rate>
+                </xmp>
+            </div>
+        </section>
+
+        <section>
+            <div class="md-ribbon" data-anchor="javascript">
+                <span>Javascript</span>
+            </div>
+
+            <xmp>
+    angular
+    .module( "demo.rate", [ "$ui.rate" ] )
+    .controller( "rateController", [ "$scope", function( $scope ) {
+        $scope.heart = 2.3;
+    } ] );
+            </xmp>
+
+        </section>
+
+        <section>
+            <div class="md-ribbon" data-anchor="sRate">
+                <span>Directive * s-rate</span>
+            </div>
+
+            <blockquote>
+                <p><code>=ngModel</code> - <code>0</code></p>
+            </blockquote>
+            <p>评分值, <code>0 - 5</code></p>
+            <br>
+
+            <blockquote>
+            <p><code>=ng-disabled</code> - <code>false</code></p>
+            </blockquote>
+            <p>是否禁用</p>
+            <br>
+
+            <blockquote>
+                <p><code>&on-select</code> - <code>null</code>
+                </p>
+            </blockquote>
+            <p>选中后回调</p>
+            <br>
+        </section>
+    </div>
+
+    <br>
+    <br>
+
+    <header>jQuery</header>
+
+    <div class="markdown">
+        <section>
+            <div class="md-ribbon" data-anchor="html">
+                <span>HTML</span>
+            </div>
+
+            <xmp>
+    <div class="md-rate">
+        <span> <i></i> </span> <span> <i></i> </span> <span> <i></i> </span> <span> <i></i> </span> <span> <i></i> </span>
+    </div>
+            </xmp>
+        </section>
+
+        <section>
+            <div class="md-ribbon" data-anchor="constructor">
+                <span>Constructor</span>
+            </div>
+
+            <p><code>$( selector ).rate( options )</code>
+            </p>
+
+            <blockquote>
+                <p><code>selector</code> - 选择器或 DOM 元素</p>
+
+                <p><code>options</code> - 参数设置</p>
+            </blockquote>
+
+            <xmp>
+    $( ".md-rate" ).rate();
+            </xmp>
+
+        </section>
+
+        <section>
+            <div class="md-ribbon" data-anchor="options">
+                <span>Options</span>
+            </div>
+
+            <blockquote>
+                <p><code>defaultValue</code> - <code>0</code></p>
+            </blockquote>
+            <p>默认值, 取值<code>0 - 5</code></p>
+            <br>
+
+            <blockquote>
+                <p><code>selector4star</code> - <code>">span"</code>
+                </p>
+            </blockquote>
+            <p>Selector of the symbol</p>
+            <br>
+
+            <blockquote>
+                <p><code>class4highlight</code> - <code>"md-rate-highlight"</code>
+                </p>
+            </blockquote>
+            <p>鼠标悬浮高亮样式</p>
+            <br>
+
+            <blockquote>
+                <p><code>class4selected</code> - <code>"md-rate-selected"</code>
+                </p>
+            </blockquote>
+            <p>选中后样式</p>
+            <br>
+
+            <blockquote>
+            <p><code>onSelect</code> - <code>null</code></p>
+            </blockquote>
+            <p>选中后执行</p>
+            <xmp>
+    $( ".md-rate" ).rate( {
+        onSelect: function( value ) {
+            console.log( value );
+        }
+    } );
+            </xmp>
+        </section>
+
+        <section>
+            <div class="md-ribbon" data-anchor="method">
+                <span>Method</span>
+            </div>
+
+            <p><code>rate.val( [value] )</code>
+            </p>
+            <blockquote>
+                <p><code>value</code> - Number</p>
+            </blockquote>
+            <p>不为空时设置为指定值(取值<code>0 - 5</code>), 为空时获取当前值</p>
+            <br>
+            <br>
+
+            <p><code>rate.disabled()</code> - 禁用控件</p>
+            <br>
+            <br>
+
+            <p><code>rate.enabled()</code> - 启用控件</p>
+        </section>
+    </div>
+</section>

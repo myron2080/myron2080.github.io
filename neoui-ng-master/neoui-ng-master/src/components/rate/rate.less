@@ -1,0 +1,74 @@
+
+@import (reference) "../../style/neoui.less";
+
+.md-rate {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    box-sizing: content-box;
+    > span {
+        position: relative;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        margin-left: 10px;
+        line-height: 18px;
+        color: rgba(0, 135, 211, .4);
+        cursor: pointer;
+
+        > i:before,
+        &:after {
+            content: "★";
+            transition: .2s;
+        }
+
+        > i,
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        > i {
+            font-style: normal;
+            width: 0;
+            overflow: hidden;
+            z-index: 9;
+            cursor: pointer;
+            &:before { overflow: hidden; }
+        }
+
+        &:hover:after,
+        &.md-rate-highlight { color: rgba(0,135,211,.6); }
+
+        &.md-rate-selected {
+            > i {
+                width: 100%;
+                &:before { color: rgb(0, 135, 211); }
+            }
+        }
+    }
+}
+
+.md-rate.md-rate-heart {
+    > span {
+        color: rgba(233, 54, 40, .4);
+
+        > i:before,
+        &:after {
+            font-family: "icomoon";
+            content: "\e649";
+        }
+
+        &:hover:after,
+        &.md-rate-highlight { color: rgba(233,54,40,.6); }
+
+        &.md-rate-selected {
+            > i {
+                width: 100%;
+                &:before { color: rgb(233,54,40); }
+            }
+        }
+    }
+}
