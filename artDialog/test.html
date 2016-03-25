@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>testSide</title>
+    <style>
+        body{text-align:center;}
+        #frame{height:400px;width:600px;overflow:hidden;margin:auto;position:relative;}
+        .button{background:#ddd;height:20px;wdith:40px;position:absolute;cursor:pointer;}
+        .img{float:left;height:100%;width:600px;}
+        #img-switch{height:100%;width:2400px;}
+    </style>
+    <script>
+        window.onload=function(){
+            window.imgs=document.getElementsByClassName('img');
+            window.imgSwitch=document.getElementById('img-switch');
+            window.timeID=0;
+        }
+        function move(wi,init){
+            if(init){clearTimeout(timeID);}
+
+            var ml=isNaN(parseInt(imgs[0].style.marginLeft))?0:parseInt(imgs[0].style.marginLeft);
+            if(wi<0){
+                if(ml==-600){
+                    var tmpImg=imgs[0];
+                    imgSwitch.removeChild(imgs[0]);
+                    imgSwitch.appendChild(tmpImg);
+                    tmpImg.style.marginLeft=0;
+                    imgs=document.getElementsByClassName('img');
+
+                }else{
+                    imgs[0].style.marginLeft=ml+wi;
+                }
+            }else{
+                if(ml==0){
+                    var tmpImg=imgs[3];
+                    imgSwitch.removeChild(imgs[3]);
+                    imgSwitch.insertBefore(tmpImg,imgs[0]);
+                    tmpImg.style.marginLeft=-600;
+                    imgs=document.getElementsByClassName('img');
+                }else{
+                    imgs[0].style.marginLeft=ml+wi;
+                }
+            }
+
+            timeID=setTimeout(move,1,wi,false);
+        }
+
+    </script>
+</head>
+<body>
+<div id="frame">
+    <div class="button" id="left" onclick="move(-1,true)" style="left:0px;top:40px;">left</div>
+    <div id="img-switch">
+        <div class="img" style="background:red">image1</div>
+        <div class="img" style="background:blue">image2</div>
+        <div class="img" style="background:greenyellow">image3</div>
+        <div class="img" style="background:yellowgreen">image4</div>
+    </div>
+    <div class="button" id="right" onclick="move(1,true)"  style="right:0px;top:40px;">right</div>
+</div>
+</body>
+</html>
