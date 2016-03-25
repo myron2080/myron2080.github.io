@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01",
+    "name": "一等奖",
+    "icon": "calendar_ffffff_68"
+  },
+  {
+    "id": "02",
+    "name": "二等奖",
+    "icon": "calendar_ffffff_68"
+  },
+  {
+    "id": "03",
+    "name": "三等奖",
+    "icon": "calendar_ffffff_68"
+  },
+  {
+    "id": "04",
+    "name": "四等奖",
+    "icon": "calendar_ffffff_68"
+  },
+  {
+    "id": "05",
+    "name": "五等奖",
+    "icon": "calendar_ffffff_68"
+  },
+  {
+    "id": "06",
+    "name": "谢谢参与",
+    "icon": "calendar_ffffff_68"
+  }
+]

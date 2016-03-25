@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>artDialog</title>
+
+    <script src="artDialog-6.0.4/lib/jquery-1.10.2.js"></script>
+
+    <link rel="stylesheet" href="artDialog-6.0.4/css/ui-dialog.css" />
+    <script src="artDialog-6.0.4/dist/dialog-min.js"></script>
+    <script src="artDialog-6.0.4/lib/sea.js"></script>
+
+    <script src="artDialog-6.0.4/dist/dialog-plus.js"></script>
+
+    <script src="2222.js"></script>
+    <script src="artDialogCustom.js"></script>
+
+
+    <style type="text/css">
+
+    </style>
+
+
+    <script type="text/javascript">
+       /* seajs.use(['http://localhost:63342/htmfile/%E6%8E%A7%E4%BB%B6/%E5%BC%B9%E5%87%BA%E6%A1%86Dialog/artDialog/artDialog-6.0.4/src/dialog-plus'], function (dialog) {
+            window.dialog = dialog;
+        });
+        seajs.config({
+            alias: {
+                "jquery":"http://localhost:63342/htmfile/%E6%8E%A7%E4%BB%B6/%E5%BC%B9%E5%87%BA%E6%A1%86Dialog/artDialog/artDialog-6.0.4/lib/jquery-1.10.2.js"
+            }
+        });*/
+        $(function(){
+
+
+/*
+
+           var arr=[1,2,3,4,5,6,123];
+            var x =arr.length;
+            arr[arr.length] = x;
+            /!*   for(var i = 0, i_len = arr.length; i < i_len; i++) {
+                console.log(arr[i]);
+            }*!/
+            console.log(arr[arr.length-1]);
+            for(var i = 0;i < arr[arr.length-1]; i++) {
+                console.log(arr[i]);
+            }
+*/
+
+         /*   seajs.use(['jquery'], function ($) {
+                top.dialog({
+                    id: 'add-dialog',
+                    title: 'artDialogTest2',
+                    content: '<iframe src="artDialogTest2.html" width="100%" height="400" frameborder="0" scrolling="no"></iframe>',
+                    width:320,
+                    button: [{value: '关闭'},
+                        {
+                            value: '确认',
+                            callback: function () {
+
+                            },
+                            autofocus: true
+                        }]
+                }).show();
+                return false;
+            });*/
+
+
+
+            var callback=function(){
+                dialog({quickClose: true,content: '成功'}).show();
+            }
+
+
+            //$.frontEngineDialog.executeIframeDialog('add','新增用户','artDialogTest2.html','100%','400');
+             $.frontEngineDialog.executeDialog('add','新增用户','liuyu','100%','100%',function(){dialog({content: '成功',quickClose: true}).show();});
+            // $.frontEngineDialog.executeDialog('add','新增用户','liuyu','100%','100%',callback);
+            //$.frontEngineDialog.executeDialogOK('新增用户','成功！','200');
+            //$.frontEngineDialog.executeDialogContentTime('出错啦！');
+            //$.frontEngineDialog.executeDialogContent('提示','出错啦！','200');
+
+
+          /*  $.frontEngineAjax.executeAjax(
+                    "mainMenu.json",
+                    null,
+                    {'id':'121','name':'ly'},
+                    function(data){
+                        alert(data.length);
+                    },
+                    function(e){
+                        $.frontEngineDialog.executeDialogContent('出错啦！',e.status  );
+                    }
+            );*/
+
+
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+</html>
